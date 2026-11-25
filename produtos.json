@@ -1,0 +1,104 @@
+{
+  "produtos": [
+    {
+      "id": 1, "nome": "Camisa Internacional", "clube": "Internacional", "cat": "grenal",
+      "preco": 349.90, "precoOriginal": 399.90,
+      "descricao": "Camisa de torcedor em tecido leve de secagem rápida, com gola careca e escudo bordado.",
+      "tamanhos": ["P", "M", "G", "GG"],
+      "modelos": [
+        { "nome": "Titular", "cores": ["#d71920"], "detalhe": "#ffffff" },
+        { "nome": "Reserva", "cores": ["#ffffff"], "detalhe": "#d71920" }
+      ]
+    },
+    {
+      "id": 2, "nome": "Camisa Grêmio", "clube": "Grêmio", "cat": "grenal",
+      "preco": 349.90, "precoOriginal": 399.90,
+      "descricao": "Camisa de torcedor com listras clássicas, tecido confortável e acabamento reforçado.",
+      "tamanhos": ["P", "M", "G", "GG"],
+      "modelos": [
+        { "nome": "Titular", "cores": ["#0d80bf", "#000000", "#ffffff"], "detalhe": "#000000" },
+        { "nome": "Reserva", "cores": ["#111111"], "detalhe": "#0d80bf" }
+      ]
+    },
+    {
+      "id": 3, "nome": "Camisa Flamengo", "clube": "Flamengo", "cat": "brasil",
+      "preco": 329.90,
+      "descricao": "Camisa rubro-negra de torcedor, leve e respirável, para usar no estádio ou no dia a dia.",
+      "tamanhos": ["P", "M", "G", "GG"],
+      "modelos": [
+        { "nome": "Titular", "cores": ["#d71920", "#111111"], "detalhe": "#ffffff" },
+        { "nome": "Reserva", "cores": ["#ffffff"], "detalhe": "#d71920" }
+      ]
+    },
+    {
+      "id": 4, "nome": "Camisa Palmeiras", "clube": "Palmeiras", "cat": "brasil",
+      "preco": 329.90, "precoOriginal": 379.90,
+      "descricao": "Camisa verde de torcedor, com tecido macio e escudo em alta definição.",
+      "tamanhos": ["P", "M", "G", "GG"],
+      "modelos": [
+        { "nome": "Titular", "cores": ["#006437"], "detalhe": "#ffffff" },
+        { "nome": "Reserva", "cores": ["#ffffff"], "detalhe": "#006437" }
+      ]
+    },
+    {
+      "id": 5, "nome": "Camisa Corinthians", "clube": "Corinthians", "cat": "brasil",
+      "preco": 329.90,
+      "descricao": "Camisa de torcedor em tecido leve, com gola e detalhes que lembram o uniforme clássico.",
+      "tamanhos": ["P", "M", "G", "GG"],
+      "modelos": [
+        { "nome": "Titular", "cores": ["#ffffff"], "detalhe": "#111111" },
+        { "nome": "Reserva", "cores": ["#111111"], "detalhe": "#ffffff" }
+      ]
+    },
+    {
+      "id": 6, "nome": "Camisa Real Madrid", "clube": "Real Madrid", "cat": "europa",
+      "preco": 499.90, "precoOriginal": 549.90,
+      "descricao": "Camisa de torcedor com visual elegante e detalhes dourados, tecido leve e confortável.",
+      "tamanhos": ["P", "M", "G", "GG"],
+      "modelos": [
+        { "nome": "Titular", "cores": ["#ffffff"], "detalhe": "#e5c158" },
+        { "nome": "Reserva", "cores": ["#2b2b6b"], "detalhe": "#e5c158" }
+      ]
+    },
+    {
+      "id": 7, "nome": "Camisa Barcelona", "clube": "Barcelona", "cat": "europa",
+      "preco": 499.90,
+      "descricao": "Camisa de torcedor em listras azul e grená, com acabamento premium.",
+      "tamanhos": ["P", "M", "G", "GG"],
+      "modelos": [
+        { "nome": "Titular", "cores": ["#a50044", "#004d98"], "detalhe": "#edbb00" },
+        { "nome": "Reserva", "cores": ["#f2c500"], "detalhe": "#a50044" }
+      ]
+    },
+    {
+      "id": 8, "nome": "Camisa Manchester City", "clube": "Manchester City", "cat": "europa",
+      "preco": 489.90,
+      "descricao": "Camisa celeste de torcedor, com tecido respirável e corte moderno.",
+      "tamanhos": ["P", "M", "G", "GG"],
+      "modelos": [
+        { "nome": "Titular", "cores": ["#6cabdd"], "detalhe": "#ffffff" },
+        { "nome": "Reserva", "cores": ["#1c2c5b"], "detalhe": "#6cabdd" }
+      ]
+    },
+    {
+      "id": 9, "nome": "Camisa Liverpool", "clube": "Liverpool", "cat": "europa",
+      "preco": 489.90, "precoOriginal": 539.90,
+      "descricao": "Camisa vermelha de torcedor, com tecido leve de secagem rápida e escudo bordado.",
+      "tamanhos": ["P", "M", "G", "GG"],
+      "modelos": [
+        { "nome": "Titular", "cores": ["#c8102e"], "detalhe": "#ffffff" },
+        { "nome": "Reserva", "cores": ["#ffffff"], "detalhe": "#c8102e" }
+      ]
+    },
+    {
+      "id": 10, "nome": "Camisa Bayern de Munique", "clube": "Bayern de Munique", "cat": "europa",
+      "preco": 489.90,
+      "descricao": "Camisa de torcedor vermelha, confortável e leve, com acabamento de alta qualidade.",
+      "tamanhos": ["P", "M", "G", "GG"],
+      "modelos": [
+        { "nome": "Titular", "cores": ["#dc052d"], "detalhe": "#ffffff" },
+        { "nome": "Reserva", "cores": ["#ffffff"], "detalhe": "#dc052d" }
+      ]
+    }
+  ]
+}

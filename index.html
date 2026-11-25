@@ -3,98 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Venda de Camisas de Time</title>
-  <style>
-    * { box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f4f4f4; }
-    h1 { text-align: center; margin-bottom: 5px; }
-    .sub { text-align: center; color: #666; margin-top: 0; }
-    .filtros { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 20px 0; }
-    .filtros button { padding: 8px 16px; border: 2px solid #222; border-radius: 20px; background: #fff; cursor: pointer; font-weight: bold; }
-    .filtros button.ativo { background: #222; color: #fff; }
-    #produtos { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
-    .card { background: #fff; border-radius: 8px; padding: 15px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,.15); }
-    .card svg { width: 100%; height: 170px; }
-    .card h3 { font-size: 16px; margin: 10px 0 4px; }
-    .clube { color: #777; font-size: 13px; margin: 0; }
-    .preco { font-weight: bold; color: #c00; font-size: 18px; }
-    .card button { padding: 8px 14px; border: 0; border-radius: 4px; background: #222; color: #fff; cursor: pointer; }
-    .card button:hover { background: #c00; }
-  </style>
+  <title>CamisaStore | Camisas de Time</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>Camisas de Time</h1>
-  <p class="sub">Brasil e Europa, com destaque para o Grenal</p>
+  <div class="promo">Frete grátis acima de R$ 399 &nbsp;|&nbsp; Use o cupom <strong>GRENAL10</strong> e ganhe 10% de desconto &nbsp;|&nbsp; 10x sem juros</div>
 
-  <div class="filtros" id="filtros">
+  <header class="topo">
+    <a class="logo" href="#">Camisa<span>Store</span></a>
+    <input type="search" id="busca" placeholder="Buscar camisas e times (ex.: Inter, Grêmio, Real Madrid)">
+    <div class="acoes">
+      <button id="btn-favoritos" class="btn-topo">♥ Favoritos <span id="cont-fav" class="badge-topo">0</span></button>
+      <button id="btn-carrinho" class="btn-topo destaque">Carrinho <span id="contador" class="badge-topo">0</span></button>
+    </div>
+  </header>
+
+  <nav class="menu" id="filtros">
     <button class="ativo" data-cat="todos">Todos</button>
     <button data-cat="grenal">Grenal</button>
     <button data-cat="brasil">Brasil</button>
     <button data-cat="europa">Europa</button>
+    <button data-cat="promocao">Promoções</button>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-texto">
+      <p class="hero-tag">Coleção 2026</p>
+      <h1>Grenal: escolha o seu lado</h1>
+      <p>As camisas de Internacional e Grêmio, além dos grandes clubes do Brasil e da Europa.</p>
+      <div class="hero-botoes">
+        <button class="hero-btn inter" data-busca="Internacional">Camisas do Inter</button>
+        <button class="hero-btn gremio" data-busca="Grêmio">Camisas do Grêmio</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="barra">
+    <p id="resultado" class="resultado"></p>
+    <label class="ordem">Ordenar por
+      <select id="ordem">
+        <option value="relevancia">Relevância</option>
+        <option value="menor">Menor preço</option>
+        <option value="maior">Maior preço</option>
+        <option value="az">Nome (A a Z)</option>
+      </select>
+    </label>
+  </section>
+
+  <main id="vitrine" class="vitrine">Carregando produtos...</main>
+
+  <footer class="rodape">
+    <p><strong>CamisaStore</strong>: projeto de estudo. Produtos, preços e pedidos são fictícios.</p>
+  </footer>
+
+  <!-- Janela (detalhe do produto, checkout e confirmação) -->
+  <div id="modal" class="modal">
+    <div id="modal-conteudo" class="modal-caixa"></div>
   </div>
 
-  <div id="produtos"></div>
+  <!-- Carrinho -->
+  <div id="overlay" class="overlay"></div>
+  <aside id="carrinho" class="carrinho" aria-label="Carrinho de compras">
+    <div class="carrinho-topo">
+      <h2>Seu carrinho</h2>
+      <button id="fechar" class="fechar" aria-label="Fechar carrinho">×</button>
+    </div>
 
-  <script>
-    // Dados de exemplo (preços fictícios). Depois podem vir de uma API própria.
-    const produtos = [
-      { nome: "Camisa Internacional I",  clube: "Internacional", cat: "grenal", preco: 349.90, cores: ["#d71920"], detalhe: "#ffffff" },
-      { nome: "Camisa Internacional II", clube: "Internacional", cat: "grenal", preco: 349.90, cores: ["#ffffff"], detalhe: "#d71920" },
-      { nome: "Camisa Grêmio I",         clube: "Grêmio",        cat: "grenal", preco: 349.90, cores: ["#0d80bf", "#000000", "#ffffff"], detalhe: "#000000" },
-      { nome: "Camisa Grêmio II",        clube: "Grêmio",        cat: "grenal", preco: 349.90, cores: ["#111111"], detalhe: "#0d80bf" },
-      { nome: "Camisa Flamengo I",       clube: "Flamengo",      cat: "brasil", preco: 329.90, cores: ["#d71920", "#111111"], detalhe: "#ffffff" },
-      { nome: "Camisa Palmeiras I",      clube: "Palmeiras",     cat: "brasil", preco: 329.90, cores: ["#006437"], detalhe: "#ffffff" },
-      { nome: "Camisa Corinthians I",    clube: "Corinthians",   cat: "brasil", preco: 329.90, cores: ["#ffffff"], detalhe: "#111111" },
-      { nome: "Camisa Real Madrid I",    clube: "Real Madrid",   cat: "europa", preco: 499.90, cores: ["#ffffff"], detalhe: "#e5c158" },
-      { nome: "Camisa Barcelona I",      clube: "Barcelona",     cat: "europa", preco: 499.90, cores: ["#a50044", "#004d98"], detalhe: "#edbb00" },
-      { nome: "Camisa Manchester City I",clube: "Manchester City", cat: "europa", preco: 489.90, cores: ["#6cabdd"], detalhe: "#ffffff" },
-      { nome: "Camisa Liverpool I",      clube: "Liverpool",     cat: "europa", preco: 489.90, cores: ["#c8102e"], detalhe: "#ffffff" },
-      { nome: "Camisa Bayern de Munique I", clube: "Bayern de Munique", cat: "europa", preco: 489.90, cores: ["#dc052d"], detalhe: "#ffffff" }
-    ];
+    <div class="frete-info">
+      <p id="frete-texto"></p>
+      <div class="progresso"><div id="frete-barra"></div></div>
+    </div>
 
-    const FORMA = "M30 10 L8 26 L20 42 L28 36 L28 92 L72 92 L72 36 L80 42 L92 26 L70 10 Q50 24 30 10 Z";
+    <div id="itens" class="itens"></div>
 
-    function desenharCamisa(p, i) {
-      const id = "forma" + i;
-      let fundo = "";
-      if (p.cores.length === 1) {
-        fundo = `<rect width="100" height="100" fill="${p.cores[0]}"/>`;
-      } else {
-        const largura = 100 / 10;
-        for (let n = 0; n < 10; n++) {
-          fundo += `<rect x="${n * largura}" width="${largura}" height="100" fill="${p.cores[n % p.cores.length]}"/>`;
-        }
-      }
-      return `
-        <svg viewBox="0 0 100 100" role="img" aria-label="${p.nome}">
-          <defs><clipPath id="${id}"><path d="${FORMA}"/></clipPath></defs>
-          <g clip-path="url(#${id})">${fundo}</g>
-          <path d="${FORMA}" fill="none" stroke="${p.detalhe}" stroke-width="2.5"/>
-          <path d="M40 11 Q50 24 60 11" fill="none" stroke="${p.detalhe}" stroke-width="3"/>
-        </svg>`;
-    }
+    <div class="carrinho-rodape">
+      <div class="cupom">
+        <input type="text" id="cupom" placeholder="Cupom de desconto">
+        <button id="aplicar-cupom">Aplicar</button>
+      </div>
+      <p id="msg-cupom" class="msg-cupom"></p>
+      <div class="linha"><span>Subtotal</span><span id="subtotal">R$ 0,00</span></div>
+      <div class="linha desconto" id="linha-desconto"><span>Desconto</span><span id="desconto">R$ 0,00</span></div>
+      <div class="linha"><span>Frete</span><span id="frete">R$ 0,00</span></div>
+      <div class="linha total"><span>Total</span><strong id="total">R$ 0,00</strong></div>
+      <button id="finalizar" class="finalizar">Finalizar compra</button>
+      <button id="limpar" class="limpar">Esvaziar carrinho</button>
+    </div>
+  </aside>
 
-    function mostrar(categoria) {
-      const container = document.getElementById("produtos");
-      const lista = categoria === "todos" ? produtos : produtos.filter(p => p.cat === categoria);
-      container.innerHTML = lista.map((p, i) => `
-        <div class="card">
-          ${desenharCamisa(p, i)}
-          <h3>${p.nome}</h3>
-          <p class="clube">${p.clube}</p>
-          <p class="preco">${p.preco.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</p>
-          <button>Comprar</button>
-        </div>`).join("");
-    }
+  <div id="toast" class="toast"></div>
 
-    document.getElementById("filtros").addEventListener("click", e => {
-      if (e.target.tagName !== "BUTTON") return;
-      document.querySelectorAll("#filtros button").forEach(b => b.classList.remove("ativo"));
-      e.target.classList.add("ativo");
-      mostrar(e.target.dataset.cat);
-    });
-
-    mostrar("todos");
-  </script>
+  <script src="js/app.js"></script>
 </body>
 </html>
