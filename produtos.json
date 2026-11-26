@@ -1,0 +1,163 @@
+
+[
+  {
+    "id": 1,
+    "nome": "Camisa Tricolor Titular",
+    "time": "Grêmio",
+    "preco": 249.90,
+    "descricao": "Modelo titular inspirado nas tradicionais cores tricolores.",
+    "classe": "gremio"
+  },
+  {
+    "id": 2,
+    "nome": "Camisa Grêmio Reserva",
+    "time": "Grêmio",
+    "preco": 229.90,
+    "descricao": "Modelo reserva para os apaixonados pelo Imortal.",
+    "classe": "gremio"
+  },
+  {
+    "id": 3,
+    "nome": "Camisa Grêmio Retrô",
+    "time": "Grêmio",
+    "preco": 269.90,
+    "descricao": "Estilo retrô inspirado na história tricolor.",
+    "classe": "gremio"
+  },
+  {
+    "id": 4,
+    "nome": "Camisa Grêmio Torcedor",
+    "time": "Grêmio",
+    "preco": 199.90,
+    "descricao": "Conforto e tradição para acompanhar os jogos.",
+    "classe": "gremio"
+  },
+  {
+    "id": 5,
+    "nome": "Camisa Colorada Titular",
+    "time": "Internacional",
+    "preco": 249.90,
+    "descricao": "Modelo vermelho inspirado na paixão colorada.",
+    "classe": "inter"
+  },
+  {
+    "id": 6,
+    "nome": "Camisa Internacional Reserva",
+    "time": "Internacional",
+    "preco": 229.90,
+    "descricao": "Modelo reserva em homenagem ao Colorado.",
+    "classe": "inter"
+  },
+  {
+    "id": 7,
+    "nome": "Camisa Inter Retrô",
+    "time": "Internacional",
+    "preco": 269.90,
+    "descricao": "Visual retrô inspirado na história do clube.",
+    "classe": "inter"
+  },
+  {
+    "id": 8,
+    "nome": "Camisa Inter Torcedor",
+    "time": "Internacional",
+    "preco": 199.90,
+    "descricao": "Uma opção confortável para a torcida colorada.",
+    "classe": "inter"
+  },
+  {
+    "id": 9,
+    "nome": "Camisa Juventude Titular",
+    "time": "Juventude",
+    "preco": 219.90,
+    "descricao": "Modelo verde e branco inspirado no Jaconero.",
+    "classe": "juventude"
+  },
+  {
+    "id": 10,
+    "nome": "Camisa Juventude Reserva",
+    "time": "Juventude",
+    "preco": 209.90,
+    "descricao": "Modelo alternativo para a torcida alviverde.",
+    "classe": "juventude"
+  },
+  {
+    "id": 11,
+    "nome": "Camisa Juventude Retrô",
+    "time": "Juventude",
+    "preco": 249.90,
+    "descricao": "Estilo clássico inspirado na história do clube.",
+    "classe": "juventude"
+  },
+  {
+    "id": 12,
+    "nome": "Camisa Caxias Titular",
+    "time": "Caxias",
+    "preco": 219.90,
+    "descricao": "Modelo grená inspirado na tradição grená.",
+    "classe": "caxias"
+  },
+  {
+    "id": 13,
+    "nome": "Camisa Caxias Reserva",
+    "time": "Caxias",
+    "preco": 199.90,
+    "descricao": "Modelo alternativo em grená e branco.",
+    "classe": "caxias"
+  },
+  {
+    "id": 14,
+    "nome": "Camisa Caxias Retrô",
+    "time": "Caxias",
+    "preco": 239.90,
+    "descricao": "Modelo clássico para os torcedores grenás.",
+    "classe": "caxias"
+  },
+  {
+    "id": 15,
+    "nome": "Camisa Brasil Titular",
+    "time": "Brasil de Pelotas",
+    "preco": 219.90,
+    "descricao": "Modelo rubro-negro inspirado na torcida Xavante.",
+    "classe": "brasil"
+  },
+  {
+    "id": 16,
+    "nome": "Camisa Brasil Reserva",
+    "time": "Brasil de Pelotas",
+    "preco": 199.90,
+    "descricao": "Modelo alternativo para a torcida Xavante.",
+    "classe": "brasil"
+  },
+  {
+    "id": 17,
+    "nome": "Camisa Brasil Retrô",
+    "time": "Brasil de Pelotas",
+    "preco": 249.90,
+    "descricao": "Estilo clássico inspirado na história Xavante.",
+    "classe": "brasil"
+  },
+  {
+    "id": 18,
+    "nome": "Camisa São Luiz Titular",
+    "time": "São Luiz",
+    "preco": 199.90,
+    "descricao": "Modelo vermelho e verde inspirado no Rubro.",
+    "classe": "saoluiz"
+  },
+  {
+    "id": 19,
+    "nome": "Camisa São Luiz Reserva",
+    "time": "São Luiz",
+    "preco": 189.90,
+    "descricao": "Modelo alternativo para a torcida do São Luiz.",
+    "classe": "saoluiz"
+  },
+  {
+    "id": 20,
+    "nome": "Camisa São Luiz Retrô",
+    "time": "São Luiz",
+    "preco": 229.90,
+    "descricao": "Modelo clássico inspirado na tradição do clube.",
+    "classe": "saoluiz"
+  }
+]

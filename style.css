@@ -1,0 +1,115 @@
+body{
+    margin-top: 15px;
+}
+/** estilo aplicado aos cards de produto **/
+.product-card{
+    max-width: 320px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.product-info {
+    padding: 20px;
+    text-align: center;
+}
+.product-title {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+.product-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 16px;
+    min-height: 48px; /* Mantém altura fixa para uniformidade */
+}
+.product-price {
+    font-size: 1.3rem;
+    color: green;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.btn-buy {
+    background-color: green;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+.btn-buy:hover {
+    background-color: rgb(20, 65, 20);
+}
+/** estilo aplicado ao cabecalho **/
+#header{
+    background: linear-gradient(90deg, #1d5028,#28a745);
+    padding: 12px 0;
+}
+.navbar-brand{
+    color: #fff !important;
+    letter-spacing: 1px;
+}
+.nav-link{
+    color: #fff !important;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.nav-link:hover{
+    color: black !important;
+}
+/** estilo aplicado ao rodape **/
+footer {
+    background: linear-gradient(90deg, #1d5028, #28a745);
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+.footer-separador{
+    border: 0;
+    border-top: 1px solid black;
+    margin: 1rem;
+}
+.footer-columns{
+    gap:2rem;
+}
+.footer-column{
+    min-width: 200px;
+    font-weight: 600;
+}
+.footer-column h6{
+    margin-bottom: 1rem;
+    padding: 0;
+}
+.footer-column ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-column ul li{
+    margin-bottom: 0.5rem;
+}
+.footer-column ul li a{
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3;
+}
+.footer-column ul li a:hover{
+    color: black !important; 
+}
+
